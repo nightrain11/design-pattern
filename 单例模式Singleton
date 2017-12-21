@@ -1,0 +1,18 @@
+class Present
+{
+private:
+	static Present instance;
+	string _name;
+	Present(string name){_name=name}
+public:
+	static Present getInstance(string name)
+	{
+		if(instance==null&&!name.equals(null))
+		instance=new Present(string name);
+	}	return instance;
+}
+//私有的对象，由构造函数生成，用来存储已经被生成的实例
+//私有的构造函数，防止被生成，单例模式对象只能由getInstance 来生成，是否生成由他来判断。
+//getInstace必须为静态的，否则该方法无法被调用，因为只有静态方法才不用构造即可使用。
+
+该模式可以轻易的更改为允许创建一定数目对象的类，例如玩家类可以被设计为只允许创建4个player对象的类。
